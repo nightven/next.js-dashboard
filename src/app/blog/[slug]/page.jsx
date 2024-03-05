@@ -1,39 +1,54 @@
 import Image from "next/image";
 import styles from "./SinglePost.module.css";
+import { Suspense } from "react";
+import { getPost } from "@/lib/Data";
+import PostUser from "@/components/postUser/postUser";
 
-const SinglePostPage = () => {
+//! FETCH DATA WITH API
+// const getDate = async (slug) => {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+
+//   if (!res.ok) {
+//     throw new Error("Something went wrong");
+//   }
+//   return res.json();
+// };
+
+const SinglePostPage = async ({ params }) => {
+  const { slug } = params;
+//! FETCH DATA WITH API
+  // const post = await getDate(slug);
+
+  //! FETCH DATA WITHOUT API
+  const post = await getPost(slug);
+  
   return (
     <div className={styles.container}>
-      <div className={styles.imgContainer}>
-        <Image
-          src="https://images.pexels.com/photos/7098048/pexels-photo-7098048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/7098048/pexels-photo-7098048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="dog"
-          fill
-          className={styles.img}
-        />
-      </div>
-      <div className={styles.textContainer}>
-        <h1 className={styles.title}>Title</h1>
-        <div className={styles.detail}>
+      {post.img && (
+        <div className={styles.imgContainer}>
           <Image
-            src="https://images.pexels.com/photos/7098048/pexels-photo-7098048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/7098048/pexels-photo-7098048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="user avatar"
-            width={50}
-            height={50}
-            className={styles.avatar}
+            src={post.img}
+            alt="dog"
+            fill
+            className={styles.img}
           />
-          <div className={styles.detailText}>
-            <span className={styles.detailTitle}>Author</span>
-            <span className={styles.detailValue}>Terry Jefferson</span>
-          </div>
+        </div>
+      )}
+
+      <div className={styles.textContainer}>
+        <h1 className={styles.title}>{post.title}</h1>
+        <div className={styles.detail}>
+         
+          <Suspense fallback={<div>Loading ...</div>}>
+            <PostUser userId={post.userId} />
+          </Suspense>
+
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
-            <span className={styles.detailValue}>01.01.2024</span>
+            <span className={styles.detailValue}>{post.createdAt.toString().slice(4, 16)}</span>
           </div>
         </div>
-        <div className={styles.content}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus tempora eius cupiditate doloremque quisquam sint explicabo ipsum ut nam, cumque sequi quas assumenda. Harum earum eveniet laborum, perferendis, molestias expedita optio, aperiam molestiae vitae repellendus et illo facilis hic vero.
-        </div>
+        <div className={styles.content}>{post.desc}</div>
       </div>
     </div>
   );
