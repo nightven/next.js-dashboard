@@ -1,38 +1,43 @@
 .container{
-display: flex;
-flex-direction: column;
-gap: 20px;
-margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .top{
-    display: flex;
+  display: flex;
 }
+
 .imgContainer{
-    width: 90%;
-    height: 400px;
-    position: relative;
+  width: 90%;
+  height: 400px;
+  position: relative;
 }
+
 .img{
-object-fit: cover;
+  object-fit: cover;
 }
+
 .date{
-  
-    font-size: 12px;
-    transform: rotate(270deg);
-    margin: auto;
+  font-size: 12px;
+  transform: rotate(270deg);
+  margin: auto;
 }
+
 .title{
-      width: 90%;
-    font-size: 24px;
-    margin-bottom: 20px;
+  width: 90%;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
+
 .desc{
-      width: 90%;
-      margin-bottom: 20px;
-      font-weight: 300;
-      color: gray;
+  width: 90%;
+  margin-bottom: 20px;
+  font-weight: 300;
+  color: gray;
 }
+
 .link{
-    text-decoration: underline;
+  text-decoration: underline;
 }

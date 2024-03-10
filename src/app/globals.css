@@ -5,6 +5,7 @@
   --textSoft: #e5e5e5;
   --btn: #3673fd;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@
 body {
   background-color: var(--bg);
   color: var(--text);
+
 }
 
 a {
@@ -32,46 +34,45 @@ a {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 1536px) {
+@media (max-width: 1536px) {
   .container {
     width: 1366px;
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
   .container {
     width: 1280px;
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
   .container {
     width: 1024px;
     padding-left: 20px;
-  padding-right: 20px;
+    padding-right: 20px;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .container {
     width: 768px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .container {
     width: 640px;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media (max-width: 640px) {
   .container {
     width: 475px;
   }
 }
-@media screen and (max-width: 475px) {
+@media (max-width: 475px) {
   .container {
     width: 380px;
   }
 }
-

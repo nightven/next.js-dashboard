@@ -1,10 +1,9 @@
 "use client"
-import React from 'react'
 
-const error = () => {
+const Error = () => {
   return (
-    <div>error</div>
+    <div>Error</div>
   )
 }
 
-export default error
+export default Error

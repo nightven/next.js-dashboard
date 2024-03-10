@@ -3,6 +3,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .logout {
   padding: 10px;
   cursor: pointer;
@@ -18,10 +19,12 @@
   .links {
     display: none;
   }
-  .menuButton{
+
+  .menuButton {
     display: block;
     cursor: pointer;
   }
+
   .mobileLinks {
     position: absolute;
     top: 100px;
@@ -31,8 +34,8 @@
     background-color: var(--bg);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 10px;
   }
 }
