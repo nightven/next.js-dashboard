@@ -5,7 +5,7 @@ import { getPosts } from "@/lib/data";
 // FETCH DATA WITH AN API
 const getData = async () => {
   const res = await fetch(
-    "https://next-js-dashboard-qo7bo4f2v-vitalii-beiars-projects.vercel.app/api/blog",
+    "/api/blog",
     { next: { revalidate: 3600 } }
   );
 
