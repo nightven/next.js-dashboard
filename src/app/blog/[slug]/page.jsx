@@ -7,7 +7,7 @@ import { getPost } from "@/lib/data";
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
   const res = await fetch(
-    `https://next-js-dashboard-bice-chi.vercel.app/${slug}`
+    `https://next-js-dashboard-bice-chi.vercel.app/api/blog/${slug}`
   );
 
   if (!res.ok) {
